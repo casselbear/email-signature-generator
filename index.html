@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📫 Email Signature Generator</title>
+  <style>
+    .container-border {
+      border: 1px solid #008CBA;
+      padding: 1%;
+      min-height: 204px;
+      min-width: 500px;
+      width: 80%;
+    }
+
+    .container {
+      position: relative;
+      display:block;
+      width: 500px;
+      font-family: Verdana, sans-serif;
+      font-size: 10pt;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    /* .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 20px 0px;
+      transition-duration: 0.3s;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      border: 2px solid #008CBA;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #008CBA;
+      color: white;
+      cursor: pointer;
+    } */
+
+    form div {
+      padding-bottom: 12px;
+    }
+
+    .pre-gen {
+      display: none;
+    }
+
+    input[type="text"] {
+      display: block;
+      width: 300px;
+      border: solid 1px #000;
+      padding: 8px 12px;
+      margin: 12px 0px 24px 0px;
+    }
+
+    input:focus-visible, input:focus {
+      outline: none;
+      border-color: #999;
+    }    
+
+    .gen-btn {
+      margin-top:40px;
+      padding:12px 20px;
+      border: none;
+      background-color: #00aae7;
+      color: #FFF;
+      cursor: pointer;
+    }
+
+    .gen-btn:hover {
+      transition-duration: .25s;
+      background-color: #064a61;
+    }
+
+    .page-container {
+      padding:24px 50px;
+    }
+
+  </style>
+  </head>
+<body>
+  <div class="page-container">
+  <h1>CB Email Signature Generator</h1>
+  <p>Fill out form to generate CB email signature below. <strong>Must COPY and PASTE into Gmail signature box using SAFARI.</strong></p>
+
+  <div style="margin:40px 0px"></div>
+
+  <form id="email_form">
+    <div>
+      <label><b>Enter Name</b></label>
+      <input type="text" name="name" id="user_name">
+    </div>
+    <div>
+      <label><b>Enter Title</b></label>
+      <input type="text" name="title" id="user_title">
+    </div>
+    <div>
+      <label><b>Enter Email</b></label>
+      <input type="text" name="email" id="user_email">
+    </div>
+  </form>
+
+  <input type="submit" class="gen-btn" id="outputBtn" onclick="showInput();" onkeypress="return checkSubmit(event)">
+  <!-- <label>Your input: </label>
+  <p>Name: <span id='name_output'></span></p>
+  <p>Title: <span id='title_output'></span></p>
+  <p>Email: <span id='email_output'></span></p> -->
+
+  <div style="margin:40px 0px"></div>
+
+  <h3>Email Output:</h3>
+    <div class="container-border">
+        <table id="signature" style="height: 203px;" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr style="height: 40px;">
+            <td style="padding: 0px; height: 10px; width: 403.812px;" valign="top"><span id='name_output' style="text-align: left; color: #4a4d55; font-family: 'Tahoma', 'Arial', sans-serif; font-size: 18pt; font-weight: bold;">
+            
+            
+                <!-- Staff Name HERE -->
+                Lil' Sebastian
+            
+            
+            </span><br /><span id='title_output' style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 9pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;">
+            
+            
+                <!-- Position Title HERE -->
+                The Best Lil' Guy
+            
+            
+            </span></td>
+            </tr>
+            <tr style="height: 30px;">
+            <td style="padding: 4px 0px 0px; height: 30px; width: 403.812px;" valign="top"><a href="https://www.casselbear.com/" target="_blank"> <img title="Cassel Bear" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/CB_logo.gif" alt="Cassel Bear" width="130" height="29" border="0" /> </a></td>
+            </tr>
+            <tr style="height: 36px;">
+            <td style="padding: 0px; height: 20px; width: 403.812px;" valign="top"><span style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;"> 4884 Dressler Road<span style="color: #00aae7; font-weight: 800;"> | </span>Canton, ohio 44718</span> <br /><span style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 10pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;"> <a style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; text-decoration: none; border-width: 0px; letter-spacing: 0.4em;" href="tel:330.639.1900"> 330.639.1900</a><span style="color: #00aae7; font-weight: 800;"> | </span>
+            
+            
+                <a id='email_output' style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 20pt; font-weight: 400; text-transform: uppercase; text-decoration: none; letter-spacing: 0.4em;"
+                
+                href="mailto:itslilsebastian@visitpawnee.com">
+            
+                <!-- Email HERE -->
+                itslilsebastian@visitpawnee.com
+            
+            
+            </a></span></td>
+            </tr>
+            <tr style="height: 18px;">
+            <td style="padding: 4px 0px 0px; height: 18px; width: 403.812px;" valign="top"><a style="text-decoration: none;" href="https://www.facebook.com/casselbear" target="_blank"><img style="padding: 0px 0px 1px 0px; margin-right:3px;" title="Like Us On Facebook" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/fb-icon-noborder.gif" alt="Facebook Icon" height="20" border="0" /></a><a style="text-decoration: none;" href="https://www.instagram.com/casselbear/" target="_blank"> <img style="padding: 0px px 0px 1px; margin-right: 4px;" title="Follow Us On Instagram" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/ig-icon-noborder.gif" alt="Instagram Icon" height="21" border="0" /></a></td>
+            </tr>
+            <tr style="height: 26px;">
+            <td style="padding: 4px 0px 0px; height: 22px; width: 403.812px;" valign="top"><a style="text-align: left; color: #00aae7; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 12pt; font-weight: 800; text-transform: uppercase; text-decoration: none; letter-spacing: 0.4em;" title="Visit Our Website" href="https://www.casselbear.com/" target="_blank"> www.casselbear.com</a></td>
+            </tr>
+            </tbody>
+            </table>
+            
+    </div>
+
+    <div>
+        <!-- The button used to copy the content of the table element -->
+        <button class="button gen-btn" onclick="copyToClipboard()">Copy</button><span> Must be in Safari 🧭</span>
+    </div>
+  </div>
+</body>
+<script language="JavaScript">
+  const name = document.getElementById("user_name");
+  const title = document.getElementById("user_title");
+  const email = document.getElementById("user_email");
+  const form = document.getElementById("email_form");
+  const output = document.getElementById("signature");
+
+  output.classList.add('pre-gen');
+
+  form.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("outputBtn").click();
+  }
+});
+
+  function showInput() {
+      document.getElementById('name_output').innerHTML = name.value;
+      document.getElementById('title_output').innerHTML = title.value;
+      document.getElementById('email_output').innerHTML = email.value;
+      document.getElementById('email_output').href = "mailto:" + email.value;
+      output.classList.remove('pre-gen');
+  }
+
+  /**
+    See thread https://stackoverflow.com/questions/2044616/select-a-complete-table-with-javascript-to-be-copied-to-clipboard
+  **/
+  function copyToClipboard() {
+        var el = document.getElementById('signature');
+        var body = document.body, range, sel;
+        if (document.createRange && window.getSelection) {
+            range = document.createRange();
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            try {
+                range.selectNodeContents(el);
+                sel.addRange(range);
+            } catch (e) {
+                range.selectNode(el);
+                sel.addRange(range);
+            }
+            document.execCommand("copy");
+            // clear selection
+            if (sel) {
+                if (sel.removeAllRanges) {
+                    sel.removeAllRanges();
+                } else if (sel.empty) {
+                    sel.empty();
+                }
+            }
+        } else if (body.createTextRange) {
+            range = body.createTextRange();
+            range.moveToElementText(el);
+            range.select();
+            range.execCommand("Copy");
+        }
+    }
+</script>
+</html>
