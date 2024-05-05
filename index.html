@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📫 Email Signature Generator</title>
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📫 Email Signature Generator</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
   <div class="page-container">
@@ -16,25 +17,23 @@
 
       <div style="margin:40px 0px"></div>
 
-      <form id="email_form">
+      <form id="email_form" autocomplete="off">
         <div>
-          <label><b>Enter Name</b></label>
-          <input type="text" name="name" id="user_name">
+          <label for="user_name"><b>Enter Name</b></label>
+          <input type="text" name="name" id="user_name" placeholder="Lil' Sebastian">
         </div>
         <div>
-          <label><b>Enter Title</b></label>
-          <input type="text" name="title" id="user_title">
+          <label for="user_title"><b>Enter Title</b></label>
+          <input type="text" name="title" id="user_title" placeholder="Best Lil' Horse">
         </div>
-        <div>
-          <label><b>Enter Email</b></label>
-          <input type="text" name="email" id="user_email">
+        <div class="autocomplete">
+          <label for="user_email"><b>Enter Email</b></label>
+          <input type="text" id="user_email" name="email" placeholder="itslilsebastian@visitpawnee.com">
         </div>
       </form>
       <button type="submit" class="gen-btn" id="outputBtn" onclick="showInput();" onkeypress="return checkSubmit(event)">Generate</button>
     </div>
   </div>
-
-  <!-- <div style="margin:40px 0px"></div> -->
 
   <div class="output-container">
     <div class="heading-wrapper">
@@ -94,64 +93,7 @@
     </div>
   </div>
 </body>
-<script language="JavaScript">
-  const name = document.getElementById("user_name");
-  const title = document.getElementById("user_title");
-  const email = document.getElementById("user_email");
-  const form = document.getElementById("email_form");
-  const output = document.getElementById("signature");
-
-  output.classList.add('pre-gen');
-
-  form.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("outputBtn").click();
-  }
-});
-
-  function showInput() {
-      document.getElementById('name_output').innerHTML = name.value;
-      document.getElementById('title_output').innerHTML = title.value;
-      document.getElementById('email_output').innerHTML = email.value;
-      document.getElementById('email_output').href = "mailto:" + email.value;
-      output.classList.remove('pre-gen');
-  }
-
-  /**
-    See thread https://stackoverflow.com/questions/2044616/select-a-complete-table-with-javascript-to-be-copied-to-clipboard
-  **/
-  function copyToClipboard() {
-        var el = document.getElementById('signature');
-        var body = document.body, range, sel;
-        if (document.createRange && window.getSelection) {
-            range = document.createRange();
-            sel = window.getSelection();
-            sel.removeAllRanges();
-            try {
-                range.selectNodeContents(el);
-                sel.addRange(range);
-            } catch (e) {
-                range.selectNode(el);
-                sel.addRange(range);
-            }
-            document.execCommand("copy");
-            // clear selection
-            if (sel) {
-                if (sel.removeAllRanges) {
-                    sel.removeAllRanges();
-                } else if (sel.empty) {
-                    sel.empty();
-                }
-            }
-        } else if (body.createTextRange) {
-            range = body.createTextRange();
-            range.moveToElementText(el);
-            range.select();
-            range.execCommand("Copy");
-        }
-    }
-</script>
+<script src="javascript/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">

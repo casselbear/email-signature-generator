@@ -65,60 +65,98 @@ h3 {
     padding: var(--padding-sm);
 }
 
-  /* form div {
-    padding-bottom: 12px;
-  } */
+.pre-gen {
+display: none;
+}
 
-  .pre-gen {
-    display: none;
-  }
+input[type="text"] {
+display: block;
+width: 300px;
+border: solid 0px #000;
+background-color: var(--lt-gry);
+padding: 12px 18px;
+margin: 12px 0px 24px 0px;
+border-radius: 10px;
+/* box-shadow: 2px 2px 12px 2px #00000010; */
+}
 
-  input[type="text"] {
-    display: block;
-    width: 300px;
-    border: solid 0px #000;
-    background-color: var(--lt-gry);
-    padding: 12px 18px;
-    margin: 12px 0px 24px 0px;
-    border-radius: 10px;
-    /* box-shadow: 2px 2px 12px 2px #00000010; */
-  }
+input:focus-visible, input:focus {
+outline: none;
+background-color: white;
+box-shadow: 2px 2px 12px 2px #00000020;
+/* border-color: #999; */
+}    
 
-  input:focus-visible, input:focus {
-    outline: none;
-    background-color: white;
-    box-shadow: 2px 2px 12px 2px #00000020;
-    /* border-color: #999; */
-  }    
+input::placeholder {
+opacity: 0.5;
+}
 
-  .gen-btn {
-    margin-top:12px;
-    padding:12px 20px;
-    border: none;
-    background-color: #00aae7;
-    color: #FFF;
-    cursor: pointer;
-    outline: none;
-    border-radius: 28px;
-    /* width: 100%; */
-  }
+.gen-btn {
+margin-top:12px;
+padding:12px 20px;
+border: none;
+background-color: #00aae7;
+color: #FFF;
+cursor: pointer;
+outline: none;
+border-radius: 28px;
+/* width: 100%; */
+}
 
-  .gen-btn:hover {
-    transition-duration: .25s;
-    background-color: #064a61;
-    outline: none;
-  }
+.gen-btn:hover {
+transition-duration: .25s;
+background-color: #064a61;
+outline: none;
+}
 
-  .page-container {
-    padding:24px 50px;
-    display: flex;
-    flex-direction: row;
-    gap: var(--xxl);
-  }
+.page-container {
+padding:24px 50px;
+display: flex;
+flex-direction: row;
+gap: var(--xxl);
+}
 
-  @media only screen and (max-width:1420px) {
+@media only screen and (max-width:1420px) {
     .page-container {
         flex-direction: column;
         gap: var(--sm);
-      }
+    }
+}
+
+  /**
+    Auto complete
+  **/
+
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+  }
+
+  /*when hovering an item:*/
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+
+  /*when navigating through the items using the arrow keys:*/
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
   }
