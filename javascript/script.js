@@ -158,17 +158,7 @@
     });
   }
   
-  /*An array containing all current CB employees*/
-  var employeeEmails = [
-      "collin@casselbear.com",
-      "dave@casselbear.com",
-      "derek@casselbear.com",
-      "karl@casselbear.com",
-      "nathan@casselbear.com",
-      "ryanh@casselbear.com",
-      "seth@casselbear.com",
-      "shaye@casselbear.com"
-    ];
-  
+  /* var employeeEmails = []*/
+
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("user_email"), employeeEmails);
