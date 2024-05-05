@@ -3,121 +3,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>📫 Email Signature Generator</title>
-  <style>
-    .container-border {
-      border: 1px solid #008CBA;
-      padding: 1%;
-      min-height: 204px;
-      min-width: 500px;
-      width: 80%;
-    }
-
-    .container {
-      position: relative;
-      display:block;
-      width: 500px;
-      font-family: Verdana, sans-serif;
-      font-size: 10pt;
-      border-spacing: 0;
-      border-collapse: collapse;
-    }
-
-    /* .button {
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 20px 0px;
-      transition-duration: 0.3s;
-      cursor: pointer;
-      background-color: white;
-      color: black;
-      border: 2px solid #008CBA;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background-color: #008CBA;
-      color: white;
-      cursor: pointer;
-    } */
-
-    form div {
-      padding-bottom: 12px;
-    }
-
-    .pre-gen {
-      display: none;
-    }
-
-    input[type="text"] {
-      display: block;
-      width: 300px;
-      border: solid 1px #000;
-      padding: 8px 12px;
-      margin: 12px 0px 24px 0px;
-    }
-
-    input:focus-visible, input:focus {
-      outline: none;
-      border-color: #999;
-    }    
-
-    .gen-btn {
-      margin-top:40px;
-      padding:12px 20px;
-      border: none;
-      background-color: #00aae7;
-      color: #FFF;
-      cursor: pointer;
-    }
-
-    .gen-btn:hover {
-      transition-duration: .25s;
-      background-color: #064a61;
-    }
-
-    .page-container {
-      padding:24px 50px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
   <div class="page-container">
-  <h1>CB Email Signature Generator</h1>
-  <p>Fill out form to generate CB email signature below. <strong>Must COPY and PASTE into Gmail signature box using SAFARI.</strong></p>
-
-  <div style="margin:40px 0px"></div>
-
-  <form id="email_form">
-    <div>
-      <label><b>Enter Name</b></label>
-      <input type="text" name="name" id="user_name">
+  <div class="form-container">
+    <div class="heading-wrapper">
+      <h1 class="no-margin">CB Email Signature Generator</h1>
     </div>
-    <div>
-      <label><b>Enter Title</b></label>
-      <input type="text" name="title" id="user_title">
+    <div class="white-container">
+      <p>Fill out form to generate CB email signature below. <strong>Must COPY and PASTE into Gmail signature box using SAFARI.</strong></p>
+
+      <div style="margin:40px 0px"></div>
+
+      <form id="email_form">
+        <div>
+          <label><b>Enter Name</b></label>
+          <input type="text" name="name" id="user_name">
+        </div>
+        <div>
+          <label><b>Enter Title</b></label>
+          <input type="text" name="title" id="user_title">
+        </div>
+        <div>
+          <label><b>Enter Email</b></label>
+          <input type="text" name="email" id="user_email">
+        </div>
+      </form>
+      <button type="submit" class="gen-btn" id="outputBtn" onclick="showInput();" onkeypress="return checkSubmit(event)">Generate</button>
     </div>
-    <div>
-      <label><b>Enter Email</b></label>
-      <input type="text" name="email" id="user_email">
+  </div>
+
+  <!-- <div style="margin:40px 0px"></div> -->
+
+  <div class="output-container">
+    <div class="heading-wrapper">
+      <h3 class="no-margin">Preview:</h3>
     </div>
-  </form>
-
-  <input type="submit" class="gen-btn" id="outputBtn" onclick="showInput();" onkeypress="return checkSubmit(event)">
-  <!-- <label>Your input: </label>
-  <p>Name: <span id='name_output'></span></p>
-  <p>Title: <span id='title_output'></span></p>
-  <p>Email: <span id='email_output'></span></p> -->
-
-  <div style="margin:40px 0px"></div>
-
-  <h3>Email Output:</h3>
-    <div class="container-border">
+    <div class="container-border white-container">
         <table id="signature" style="height: 203px;" border="0" cellspacing="0" cellpadding="0">
             <tbody>
             <tr style="height: 40px;">
@@ -165,9 +88,9 @@
             
     </div>
 
-    <div>
-        <!-- The button used to copy the content of the table element -->
+    <div class="heading-wrapper">
         <button class="button gen-btn" onclick="copyToClipboard()">Copy</button><span> Must be in Safari 🧭</span>
+    </div>
     </div>
   </div>
 </body>
@@ -229,4 +152,7 @@
         }
     }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </html>
