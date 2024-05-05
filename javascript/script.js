@@ -111,7 +111,7 @@
         } else if (e.keyCode == 38) { //up
           /*If the arrow UP key is pressed,
           decrease the currentFocus variable:*/
-          currentFocus--;r
+          currentFocus--;
           /*and and make the current item more visible:*/
           addActive(x);
           /*Only disable form submissing when dropdown is active*/
