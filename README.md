@@ -1,10 +1,29 @@
-# email-signature-generator
+# Email Signature Generator
 
 *An Email Signature Generator that takes user inputs and returns preformatted HTML ready for Gmail. The signature is previewed in a container, and easily copied using a button.*
 
 ## Background
-This is a tool I built for my marketing agency. Previously, emails were formatted in Excel and copied into the Gmail signature box. This limited the design and was prone to inconsistencies and mistakes. 
-
-I redesigned our email siganture in HTML to modernize the design. The new process required a user inputing their info into the HTML template, and opening in a borser to copy. Since using a code editor or plain text is not familiar to everyone, this too had its share of problems.
+This is a tool I built for my marketing agency. After many past methods for signature entry that proved messy and inconvient, I wanted a tool that could provide a source of truth for email setup in HTML with no technical knolwedge needed for setup. The tool would have to allow users to effectibly bypass resctictions for CSS normally imposed by Gmail to achieve a modern look.
 
 This signature generator was created to make the process of creating or updating employee Gmail signatures easy, quick, and foolproof.
+
+## What it does
+- Fills in an email-ready HTML template with form inputs provided by user
+- Autofills email field 
+    - pulling from array in a single-use file so it is easily located for future updates
+- 'Return' key triggers form submission
+- Provides a preview of the signature
+- Copy button copies visual signature to clipboard for use in Gmail
+
+## Notes for use
+- Both **Copy** and **Paste** must be performed in Safari Browser. Otherwise links and line spacing styles (amoung others) will be overriden by Gmail
+- email-list.js contains array for email autofill
+- Make sure assets are linked through a CDN
+
+## Resources
+Some of the techniques used were new to me. Here are the resoruces I learned and pulled code from.
+### Copy to clipboard
+https://stackoverflow.com/questions/2044616/select-a-complete-table-with-javascript-to-be-copied-to-clipboard
+### Autocomplete
+https://www.w3schools.com/howto/howto_js_autocomplete.asp
+
