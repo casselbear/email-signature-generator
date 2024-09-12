@@ -4,6 +4,7 @@
       "collin@casselbear.com",
       "dave@casselbear.com",
       "derek@casselbear.com",
+      "hannah@casselbear.com",
       "karl@casselbear.com",
       "keegan@casselbear.com",
       "nathan@casselbear.com",
