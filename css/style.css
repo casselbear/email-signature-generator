@@ -69,7 +69,7 @@ body {
 }
 
 .gen-wrapper {
-    background-color: var(--lt-gry);
+    border: solid 2px var(--lt-gry);
     min-height: 220px;
     border-radius: 12px;
     padding: 40px 20px;
