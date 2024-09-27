@@ -17,6 +17,11 @@
     --blue:rgb(0 169 230)
 }
 
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+
 body {
     background-color:var(--lt-gry);
 }
@@ -39,17 +44,25 @@ body {
 
 
 .page-container {
-    padding: 24px var(--page-pad);
+    padding: var(--lrg) var(--page-pad);
     display: flex;
-    flex-direction: row;
-    gap: var(--xxl);
+    flex-direction: row-reverse;
+    gap: var(--sm);
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
-@media only screen and (max-width:1420px) {
+/* @media only screen and (max-width:1420px) {
     .page-container {
         flex-direction: column;
         gap: var(--med);
     }
+} */
+
+.boxes-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--med);
 }
 
 .white-container {
@@ -60,6 +73,8 @@ body {
     min-height: 450px;
     width: 540px;
     padding-bottom: var(--med);
+    display: flex;
+    flex-direction: column;
 }
 
 .column-16 {
@@ -75,24 +90,54 @@ body {
     padding: 40px 20px;
 }
 
-.form-container {
+/* .form-container {
     width: 540px;
-}
+} */
 
-.output-container {
+/* .output-container {
     width: 540px;
-}
+} */
 
 p {
     font-size: var(--body);
 }
 
-h1, h2, h3, p, label, input, button {
+code {
+    background-color: /* rgba(0 169 230 / .25) */ #90f4fc;
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 0 6px;
+  }
+
+h1, h2, h3, p, ol, li, label, input, button {
     font-family: var(--font);
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.1em;
+}
+
+/* ol {
+    margin-left: 12px;
+} */
+
+li {
+    margin-bottom: 16px;
+    margin-left: -16px;
+    padding-left: 12px;
+}
+
+li::marker {
+    font-weight: 700;
 }
 
 .heading-wrapper {
     padding: 20px var(--page-pad) 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .bottom-wrapper {
@@ -117,7 +162,6 @@ span.note {
 
 input[type="text"] {
     display: block;
-    width: 300px;
     font-size: var(--sm-body);
     border: solid 0px #000;
     background-color: var(--lt-gry);
@@ -136,6 +180,11 @@ input:focus-visible, input:focus {
 
 input::placeholder {
     opacity: 0.5;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
 }
 
 .gen-btn {
@@ -162,13 +211,17 @@ input::placeholder {
     outline: none;
 }
 
+.inst-wrapper {
+    /* padding: var(--padding-sm); */
+}
+
   /**
     Auto complete
   **/
 
   .autocomplete {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
   }
   .autocomplete-items {
     position: absolute;
@@ -208,6 +261,55 @@ input::placeholder {
 
   /*when navigating through the items using the arrow keys:*/
   .autocomplete-active {
-    background-color: DodgerBlue !important; 
+    background-color: #00a9e6 /*DodgerBlue*/ !important;
     color: #ffffff; 
   }
+
+
+/** 
+    Mobile Overrides 
+**/
+
+@media only screen and (max-width:660px) {
+    :root {
+        --sm:12px;
+        --med:24px;
+        --lrg:32px;
+        --xlg:48px;
+        --xxl:80px;
+        /* --padding-sm: var(--sm) var(--med);
+        --padding-lg: var(--med) var(--med); */
+    }
+
+    .page-container {
+        max-width: 640px !important;
+        margin: 0px;
+    }   
+    .white-container {
+        width: inherit !important;
+    }   
+
+    input[type="text"] {
+        width: inherit;
+    }
+}
+
+@media only screen and (max-width:1140px) {
+    :root {
+        --page-pad: 12px !important;
+    }
+    .page-container {
+        padding: var(--sm);
+        flex-direction: column;
+        gap: 48px !important;
+    }
+
+    .inst-wrapper {
+        max-width: 540px;
+        padding: 0px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}

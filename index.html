@@ -3,104 +3,124 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/cb-paw.png">
     <title>📫 Email Signature Generator</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
+  <div class="page-container">
   <div class="heading-wrapper">
     <h1 class="no-btm-margin">CB Email Signature Generator</h1>
-  </div>
-  <div class="page-container">
-  <div class="form-container">
-    <div class="white-container">
-      <p>Fill out form to generate CB email signature below. <strong>Must COPY and PASTE into Gmail signature box using SAFARI.</strong></p>
-
-      <div style="margin:40px 0px"></div>
-
-      <form id="email_form" autocomplete="off">
-        <div>
-          <label for="user_name"><b>Enter Name</b></label>
-          <input type="text" name="name" id="user_name" placeholder="Lil' Sebastian">
-        </div>
-        <div>
-          <label for="user_title"><b>Enter Title</b></label>
-          <input type="text" name="title" id="user_title" placeholder="Best Lil' Horse">
-        </div>
-        <div class="autocomplete">
-          <label for="user_email"><b>Enter Email</b></label>
-          <input type="text" id="user_email" name="email" placeholder="itslilsebastian@visitpawnee.com">
-        </div>
-      </form>
-      <button type="submit" class="gen-btn" id="outputBtn" onclick="showInput();" onkeypress="return checkSubmit(event)">Generate</button>
+    <div class="inst-wrapper">
+      <p>Welcome to the <strong><em>Cassel Bear Email Signature Generator!</em></strong> This tool makes adding signatures a breeze for Cassel Bear employees.</p>        
+      <p>Google truncates the styles to our branding if we simply paste our styles into Gmail. The instrcutions below describe the work around.
+      <p>For this to work, both <strong>this Generator</strong> and <strong>your Gmail</strong> must be open in Safari browser tabs.</p>
+      <ol>
+        <li>Log into your Google Account in a new Safari tab, navigate to <code>Gmail > Cog icon > See all Settings</code></li>
+        <li>Click <code>+ Create New</code> email signature and give it a title</li>
+        <li>Paste signature into the editor window</li>
+        <li>Make sure both <code>New</code> and <code>Reply</code> email drop downs have the new signature selected</li>
+        <li>Save changes at bottom. <strong>You’re done!</strong> 🎉</li>
+      </ol>
+      </p>
     </div>
   </div>
+  <div class="boxes-wrapper">
+    <div class="form-container">
+      <div class="white-container">
+        <p>Fill out form to generate CB email signature below. <strong>Must COPY and PASTE into Gmail signature box all within SAFARI.</strong></p>
 
-  <div class="output-container">
-    <div class="container-border white-container column-16">
-      <div class="top-wrapper">
-        <h3>Preview</h3>
-        <div class="gen-wrapper">
-          <table id="signature" style="height: 203px;" border="0" cellspacing="0" cellpadding="0">
-              <tbody>
-              <tr style="height: 40px;">
-              <td style="padding: 0px; height: 10px; width: 403.812px;" valign="top"><span id='name_output' style="text-align: left; color: #4a4d55; font-family: 'Tahoma', 'Arial', sans-serif; font-size: 18pt; font-weight: bold;">
-              
-              
-                  <!-- Staff Name HERE -->
-                  Lil' Sebastian
-              
-              
-              </span><br /><span id='title_output' style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 9pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;">
-              
-              
-                  <!-- Position Title HERE -->
-                  The Best Lil' Guy
-              
-              
-              </span></td>
-              </tr>
-              <tr style="height: 30px;">
-              <td style="padding: 4px 0px 0px; height: 30px; width: 403.812px;" valign="top"><a href="https://www.casselbear.com/" target="_blank"> <img title="Cassel Bear" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/CB_logo.gif" alt="Cassel Bear" width="130" height="29" border="0" /> </a></td>
-              </tr>
-              <tr style="height: 36px;">
-              <td style="padding: 0px; height: 20px; width: 403.812px;" valign="top"><span style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;"> 4884 Dressler Road<span style="color: #00aae7; font-weight: 800;"> | </span>Canton, ohio 44718</span> <br /><span style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 10pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;"> <a style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; text-decoration: none; border-width: 0px; letter-spacing: 0.4em;" href="tel:330.639.1900"> 330.639.1900</a><span style="color: #00aae7; font-weight: 800;"> | </span>
-              
-              
-                  <a id='email_output' style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 20pt; font-weight: 400; text-transform: uppercase; text-decoration: none; letter-spacing: 0.4em;"
-                  
-                  href="mailto:itslilsebastian@visitpawnee.com">
-              
-                  <!-- Email HERE -->
-                  itslilsebastian@visitpawnee.com
-              
-              
-              </a></span></td>
-              </tr>
-              <tr style="height: 18px;">
-              <td style="padding: 4px 0px 0px; height: 18px; width: 403.812px;" valign="top"><a style="text-decoration: none;" href="https://www.facebook.com/casselbear" target="_blank"><img style="padding: 0px 0px 1px 0px; margin-right:3px;" title="Like Us On Facebook" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/fb-icon-noborder.gif" alt="Facebook Icon" height="20" border="0" /></a><a style="text-decoration: none;" href="https://www.instagram.com/casselbear/" target="_blank"> <img style="padding: 0px px 0px 1px; margin-right: 4px;" title="Follow Us On Instagram" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/ig-icon-noborder.gif" alt="Instagram Icon" height="21" border="0" /></a></td>
-              </tr>
-              <tr style="height: 26px;">
-              <td style="padding: 4px 0px 0px; height: 22px; width: 403.812px;" valign="top"><a style="text-align: left; color: #00aae7; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 12pt; font-weight: 800; text-transform: uppercase; text-decoration: none; letter-spacing: 0.4em;" title="Visit Our Website" href="https://www.casselbear.com/" target="_blank"> www.casselbear.com</a></td>
-              </tr>
-              <tr id="holiday">
-                <td>
-                  <br/>
-                  <span style="font-size:13pt;font-family:Arial;color:rgb(6,170,219);font-weight:700;vertical-align:baseline">Cassel Bear will be closed</span><br/>
-                  <span style="font-size:13pt;font-family:Arial;color:rgb(6,170,219);font-weight:700;vertical-align:baseline">December 25, 2023 – January 1, 2024</span><br/>
-                  <span style="font-size:10pt;font-family:Arial;vertical-align:baseline;color:#444444">Team members will be observing a holiday break with their family and friends from December 25th–January 1st. We will return on January 2nd.</span>
-                </td>
-              </tr>
-              </tbody>
-              </table>
+        <div style="margin:12px 0px"></div>
+
+        <form id="email_form" autocomplete="off">
+          <div class="form-item autocomplete">
+            <label for="user_name"><b>Enter Name</b></label>
+            <input type="text" name="name" id="user_name" placeholder="Lil' Sebastian">
+          </div>
+          <div class="form-item">
+            <label for="user_title"><b>Enter Title</b></label>
+            <input type="text" name="title" id="user_title" placeholder="Best Lil' Horse">
+          </div>
+          <!-- 
+            Could add bubble with titles in them that get appended to the field when pressed,
+            would help for consistancy
+            -->
+          <div class="form-item autocomplete">
+            <label for="user_email"><b>Enter Email</b></label>
+            <input type="text" id="user_email" name="email" placeholder="itslilsebastian@visitpawnee.com">
+          </div>
+        </form>
+        <button type="submit" class="gen-btn" id="outputBtn" onclick="showInput();" onkeypress="return checkSubmit(event)">Generate</button>
+      </div>
+    </div>
+
+    <div class="output-container">
+      <div class="container-border white-container column-16">
+        <div class="top-wrapper">
+          <h3>Preview</h3>
+          <div class="gen-wrapper">
+            <table id="signature" style="height: 203px;" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr style="height: 40px;">
+                <td style="padding: 0px; height: 10px; width: 403.812px;" valign="top"><span id='name_output' style="text-align: left; color: #4a4d55; font-family: 'Tahoma', 'Arial', sans-serif; font-size: 18pt; font-weight: bold;">
+                
+                
+                    <!-- Staff Name HERE -->
+                    Lil' Sebastian
+                
+                
+                </span><br /><span id='title_output' style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 9pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;">
+                
+                
+                    <!-- Position Title HERE -->
+                    The Best Lil' Guy
+                
+                
+                </span></td>
+                </tr>
+                <tr style="height: 30px;">
+                <td style="padding: 4px 0px 0px; height: 30px; width: 403.812px;" valign="top"><a href="https://www.casselbear.com/" target="_blank"> <img title="Cassel Bear" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/CB_logo.gif" alt="Cassel Bear" width="130" height="29" border="0" /> </a></td>
+                </tr>
+                <tr style="height: 36px;">
+                <td style="padding: 0px; height: 20px; width: 403.812px;" valign="top"><span style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;"> 4884 Dressler Road<span style="color: #00aae7; font-weight: 800;"> | </span>Canton, ohio 44718</span> <br /><span style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 10pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.4em;"> <a style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 14pt; font-weight: 400; text-transform: uppercase; text-decoration: none; border-width: 0px; letter-spacing: 0.4em;" href="tel:330.639.1900"> 330.639.1900</a><span style="color: #00aae7; font-weight: 800;"> | </span>
+                
+                
+                    <a id='email_output' style="text-align: left; color: #4a4d55; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 20pt; font-weight: 400; text-transform: uppercase; text-decoration: none; letter-spacing: 0.4em;"
+                    
+                    href="mailto:itslilsebastian@visitpawnee.com">
+                
+                    <!-- Email HERE -->
+                    itslilsebastian@visitpawnee.com
+                
+                
+                </a></span></td>
+                </tr>
+                <tr style="height: 18px;">
+                <td style="padding: 4px 0px 0px; height: 18px; width: 403.812px;" valign="top"><a style="text-decoration: none;" href="https://www.facebook.com/casselbear" target="_blank"><img style="padding: 0px 0px 1px 0px; margin-right:3px;" title="Like Us On Facebook" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/fb-icon-noborder.gif" alt="Facebook Icon" height="20" border="0" /></a><a style="text-decoration: none;" href="https://www.instagram.com/casselbear/" target="_blank"> <img style="padding: 0px px 0px 1px; margin-right: 4px;" title="Follow Us On Instagram" src="https://cassel-bear-public.s3.us-east-2.amazonaws.com/ig-icon-noborder.gif" alt="Instagram Icon" height="21" border="0" /></a></td>
+                </tr>
+                <tr style="height: 26px;">
+                <td style="padding: 4px 0px 0px; height: 22px; width: 403.812px;" valign="top"><a style="text-align: left; color: #00aae7; font-family: 'Arial', sans-serif; font-size: 7pt; line-height: 12pt; font-weight: 800; text-transform: uppercase; text-decoration: none; letter-spacing: 0.4em;" title="Visit Our Website" href="https://www.casselbear.com/" target="_blank"> www.casselbear.com</a></td>
+                </tr>
+                <tr id="holiday">
+                  <td>
+                    <br/>
+                    <span style="font-size:13pt;font-family:Arial;color:rgb(6,170,219);font-weight:700;vertical-align:baseline">Cassel Bear will be closed</span><br/>
+                    <span style="font-size:13pt;font-family:Arial;color:rgb(6,170,219);font-weight:700;vertical-align:baseline">December 25, 2023 – January 1, 2024</span><br/>
+                    <span style="font-size:10pt;font-family:Arial;vertical-align:baseline;color:#444444">Team members will be observing a holiday break with their family and friends from December 25th–January 1st. We will return on January 2nd.</span>
+                  </td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
               </div>
-            </div>
-            <div class="bottom-wrapper">
-              <button class="button gen-btn" onclick="copyToClipboard()">Copy</button>
-              <span class="note">Copy and Paste while in Safari 🧭</span>
-            </div>
-        </div>
+              <div class="bottom-wrapper">
+                <button class="button gen-btn" onclick="copyToClipboard()">Copy</button>
+                <span class="note">Copy and Paste while in Safari 🧭</span>
+              </div>
+          </div>
+      </div>
     </div>
-  </div>
+    </div>
 </body>
 <script src="javascript/email-list.js"></script>
 <script src="javascript/script.js"></script>

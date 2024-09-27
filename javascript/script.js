@@ -70,8 +70,10 @@
         a.setAttribute("id", this.id + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
         this.parentNode.appendChild(a);
+        let matchFound = false; 
         for (i = 0; i < arr.length; i++) {
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            matchFound = true;
             b = document.createElement("DIV");
             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);
@@ -83,10 +85,14 @@
             a.appendChild(b);
           }
         }
+        if (!matchFound) { // Hide dropdown when empty
+          a.style.display = "none";
+        }
     });
     inp.addEventListener("keydown", function(e) {
-        var x = document.getElementById(this.id + "autocomplete-list");
-        var dropdown = document.getElementById("user_emailautocomplete-list");
+        var inputId = this.id;
+        var x = document.getElementById(inputId + "autocomplete-list");
+        var dropdown = document.getElementById(inputId + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
         if (e.keyCode == 40) {
           currentFocus++;
@@ -133,3 +139,4 @@
 
   /*initiate the autocomplete function*/
   autocomplete(document.getElementById("user_email"), employeeEmails);
+  autocomplete(document.getElementById("user_name"), employeeName);
