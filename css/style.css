@@ -14,7 +14,8 @@
     --no-margin:0px;
     --no-top-margin:0px;
     --lt-gry:#f5f5f5;
-    --blue:rgb(0 169 230)
+    --blue:rgb(0 169 230);
+    --dk-blue:#0a6c8c;
 }
 
 html, body {
@@ -207,7 +208,7 @@ input::placeholder {
 
 .gen-btn:hover {
     transition-duration: .25s;
-    background-color: #0a6c8c;
+    background-color: var(--dk-blue);
     outline: none;
 }
 
