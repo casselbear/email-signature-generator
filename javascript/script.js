@@ -3,25 +3,53 @@
   const email = document.getElementById("user_email");
   const form = document.getElementById("email_form");
   const output = document.getElementById("signature");
+  const messageButton = document.getElementById("messageButton");
+  const textBox = document.getElementById('messageInput');
+  const awaySubject = document.getElementById("away_subject");
+  const awayMessage = document.getElementById("away_message");
   const holiday = document.getElementById("holiday");
 
   output.classList.add('pre-gen');
   holiday.classList.add('hide-note');
 
+  let modeToggle = 'hide';
+
   form.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("outputBtn").click();
-  }
+    if (event.key === "Enter" && !event.shiftKey) { 
+        event.preventDefault();
+        document.getElementById("outputBtn").click();
+    }
 });
 
-  function showInput() {
-      document.getElementById('name_output').innerHTML = name.value;
-      document.getElementById('title_output').innerHTML = title.value;
-      document.getElementById('email_output').innerHTML = email.value;
-      document.getElementById('email_output').href = "mailto:" + email.value;
-      output.classList.remove('pre-gen');
+function messageToggle() {
+  if (modeToggle == 'hide') {
+    modeToggle = 'show';
+    messageButton.innerHTML = 'Hide Away Message';
+    messageButton.setAttribute('active','');
+    textBox.removeAttribute('hidden','');
+    holiday.classList.remove('hide-note');
+  } else {
+    modeToggle = 'hide';
+    messageButton.innerHTML = 'Add Away Message';
+    messageButton.removeAttribute('active','');
+    textBox.setAttribute('hidden','');
+    holiday.classList.add('hide-note');
   }
+}
+
+function showInput() {
+    const convertedSubject = awaySubject.value.replace(/\n/g, '<br>');
+    const convertedMessage = awayMessage.value.replace(/\n/g, '<br>');
+    
+    document.getElementById('name_output').innerHTML = name.value;
+    document.getElementById('title_output').innerHTML = title.value;
+    document.getElementById('email_output').innerHTML = email.value;
+    document.getElementById('email_output').href = "mailto:" + email.value;
+    document.getElementById('subject_output').innerHTML = convertedSubject;
+    document.getElementById('message_output').innerHTML = convertedMessage;
+    
+    output.classList.remove('pre-gen');
+}
 
   /**
     See details https://stackoverflow.com/questions/2044616/select-a-complete-table-with-javascript-to-be-copied-to-clipboard
@@ -85,7 +113,7 @@
             a.appendChild(b);
           }
         }
-        if (!matchFound) { // Hide dropdown when empty
+        if (!matchFound) { 
           a.style.display = "none";
         }
     });
@@ -100,7 +128,6 @@
         } else if (e.keyCode == 38) { 
           currentFocus--;
           addActive(x);
-          /*Only disable ENTER key form submissing when dropdown is active*/
         } else if (e.keyCode == 13 && !!dropdown == true) {
           if (!!dropdown.firstChild == true) {
             e.preventDefault();
@@ -108,7 +135,7 @@
               if (x) x[currentFocus].click();
             }
           }
-        }
+        } 
     });
     function addActive(x) {
       if (!x) return false;
@@ -134,8 +161,6 @@
         closeAllLists(e.target);
     });
   }
-  
-  /* var employeeEmails = []*/
 
   /*initiate the autocomplete function*/
   autocomplete(document.getElementById("user_email"), employeeEmails);

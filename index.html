@@ -34,20 +34,25 @@
 
         <form id="email_form" autocomplete="off">
           <div class="form-item autocomplete">
-            <label for="user_name"><b>Enter Name</b></label>
+            <label for="user_name"><b>Name</b></label>
             <input type="text" name="name" id="user_name" placeholder="Lil' Sebastian">
           </div>
           <div class="form-item">
-            <label for="user_title"><b>Enter Title</b></label>
+            <label for="user_title"><b>Title</b></label>
             <input type="text" name="title" id="user_title" placeholder="Best Lil' Horse">
           </div>
-          <!-- 
-            Could add bubble with titles in them that get appended to the field when pressed,
-            would help for consistancy
-            -->
           <div class="form-item autocomplete">
-            <label for="user_email"><b>Enter Email</b></label>
+            <label for="user_email"><b>Email</b></label>
             <input type="text" id="user_email" name="email" placeholder="itslilsebastian@visitpawnee.com">
+          </div>
+          <div class="form-item">
+            <button type="button" class="toggle-button" id="messageButton" onclick="messageToggle()">Add Away Message</button>
+          </div>
+          <div class="form-item" id="messageInput" hidden>            
+            <label for="subject"><b>Message Subject</b></label>
+            <textarea rows="3" type="text" name="subject" id="away_subject" placeholder="You’re a champion, little horse"></textarea>
+            <label for="message"><b>Message Content</b></label>
+            <textarea rows="4" type="text" name="message" id="away_message" placeholder="Five thousand candles in the wind..."></textarea>
           </div>
         </form>
         <button type="submit" class="gen-btn" id="outputBtn" onclick="showInput();" onkeypress="return checkSubmit(event)">Generate</button>
@@ -104,9 +109,8 @@
                 <tr id="holiday">
                   <td>
                     <br/>
-                    <span style="font-size:13pt;font-family:Arial;color:rgb(6,170,219);font-weight:700;vertical-align:baseline">Cassel Bear will be closed</span><br/>
-                    <span style="font-size:13pt;font-family:Arial;color:rgb(6,170,219);font-weight:700;vertical-align:baseline">December 25, 2023 – January 1, 2024</span><br/>
-                    <span style="font-size:10pt;font-family:Arial;vertical-align:baseline;color:#444444">Team members will be observing a holiday break with their family and friends from December 25th–January 1st. We will return on January 2nd.</span>
+                    <span id="subject_output" style="font-size:13pt;font-family:Arial;color:rgb(6,170,219);font-weight:700;vertical-align:baseline">Cassel Bear will be closed December 25, 2023 – January 1, 2024</span><br/>
+                    <span id="message_output" style="font-size:10pt;font-family:Arial;vertical-align:baseline;color:#444444">Team members will be observing a holiday break with their family and friends from December 25th–January 1st. We will return on January 2nd.</span>
                   </td>
                 </tr>
                 </tbody>
