@@ -8,6 +8,8 @@
   const awaySubject = document.getElementById("away_subject");
   const awayMessage = document.getElementById("away_message");
   const holiday = document.getElementById("holiday");
+  const copyButton = document.getElementById('copy');
+
 
   output.classList.add('pre-gen');
   holiday.classList.add('hide-note');
@@ -19,7 +21,7 @@
         event.preventDefault();
         document.getElementById("outputBtn").click();
     }
-});
+  });
 
 function messageToggle() {
   if (modeToggle == 'hide') {
@@ -83,7 +85,24 @@ function showInput() {
             range.select();
             range.execCommand("Copy");
         }
+        copyButton.setAttribute('copied','true');
+        copyButton.classList.add('transition');
+        copyButton.innerHTML = 'Copied!';
+        
     }
+
+copyButton.addEventListener('mouseleave', function(event){
+    if (copyButton.hasAttribute('copied','true')) {
+      setTimeout(() => {
+        copyButton.setAttribute('copied','false');
+        copyButton.innerHTML = 'Copy to Clipboard';
+      }, "1500");
+      setTimeout(() => {
+      copyButton.classList.remove('transition');
+      }, "2000");
+    }
+});
+    
   /**
     See details https://www.w3schools.com/howto/howto_js_autocomplete.asp
   **/

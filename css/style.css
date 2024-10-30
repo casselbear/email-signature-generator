@@ -213,13 +213,25 @@ textarea#away_subject {
     outline: none;
     border-radius: 28px;
     width: 100%;
-    transition-duration: .25s;
+    transition: all .15s ease-in;
+
 }
 
 .gen-btn:hover {
-    transition-duration: .25s;
+    transition-duration: .15s;
     background-color: var(--dk-blue);
     outline: none;
+}
+
+[copied="true"], [copied="true"]:hover  {
+    background-color: rgb(58, 195, 58);
+    box-shadow: 0px 4px 16px 0px rgba(49, 183, 49,.65);
+    color: white;
+    transition: all .1s ease-in;
+}
+
+.transition {
+    transition: all .5s ease-in;
 }
 
 .toggle-button {
