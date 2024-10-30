@@ -235,16 +235,20 @@ textarea#away_subject {
     margin-bottom: 24px;
 }
 
-.toggle-button:hover, .toggle-button[active]:hover {
+/* .toggle-button:hover, .toggle-button[active]:hover {
     border-color: var(--blue);
-    color: var(--blue);
     background-color: white;
+    transition: all 0.2s ease;
+} */
+
+.toggle-button[active], .toggle-button:hover {
+    border-color: var(--blue);
+    background-color: rgb(212 244 255);
     transition: all 0.2s ease;
 }
 
-.toggle-button[active] {
-    border-color: var(--blue);
-    transition: all 0.2s ease;
+.toggle-button[active]:hover {
+    border-color: #222;
 }
 
 
