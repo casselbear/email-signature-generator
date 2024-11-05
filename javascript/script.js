@@ -9,19 +9,22 @@
   const awayMessage = document.getElementById("away_message");
   const holiday = document.getElementById("holiday");
   const copyButton = document.getElementById('copy');
+  const templates = document.getElementById('templates');
 
 
-  output.classList.add('pre-gen');
-  holiday.classList.add('hide-note');
+output.classList.add('pre-gen');
+holiday.classList.add('hide-note');
 
-  let modeToggle = 'hide';
+let modeToggle = 'hide';
+let saveSubject = '';
+let saveMessage = '';
 
-  form.addEventListener("keypress", function(event) {
-    if (event.key === "Enter" && !event.shiftKey) { 
-        event.preventDefault();
-        document.getElementById("outputBtn").click();
-    }
-  });
+form.addEventListener("keypress", function(event) {
+  if (event.key === "Enter" && !event.shiftKey) { 
+      event.preventDefault();
+      document.getElementById("outputBtn").click();
+  }
+});
 
 function messageToggle() {
   if (modeToggle == 'hide') {
@@ -29,34 +32,83 @@ function messageToggle() {
     messageButton.innerHTML = 'Hide Away Message';
     messageButton.setAttribute('active','');
     textBox.removeAttribute('hidden','');
+    templates.removeAttribute('hidden','');
     holiday.classList.remove('hide-note');
   } else {
     modeToggle = 'hide';
     messageButton.innerHTML = 'Add Away Message';
     messageButton.removeAttribute('active','');
     textBox.setAttribute('hidden','');
+    templates.setAttribute('hidden','');
     holiday.classList.add('hide-note');
   }
 }
 
 function showInput() {
-    const convertedSubject = awaySubject.value.replace(/\n/g, '<br>');
-    const convertedMessage = awayMessage.value.replace(/\n/g, '<br>');
-    
-    document.getElementById('name_output').innerHTML = name.value;
-    document.getElementById('title_output').innerHTML = title.value;
-    document.getElementById('email_output').innerHTML = email.value;
-    document.getElementById('email_output').href = "mailto:" + email.value;
-    document.getElementById('subject_output').innerHTML = convertedSubject;
-    document.getElementById('message_output').innerHTML = convertedMessage;
-    
-    output.classList.remove('pre-gen');
+  const convertedSubject = awaySubject.value.replace(/\n/g, '<br>');
+  const convertedMessage = awayMessage.value.replace(/\n/g, '<br>');
+  
+  document.getElementById('name_output').innerHTML = name.value;
+  document.getElementById('title_output').innerHTML = title.value;
+  document.getElementById('email_output').innerHTML = email.value;
+  document.getElementById('email_output').href = "mailto:" + email.value;
+  document.getElementById('subject_output').innerHTML = convertedSubject;
+  document.getElementById('message_output').innerHTML = convertedMessage;
+  
+  output.classList.remove('pre-gen');
+}
+
+// Message dropdown
+function toggleDropdown() {
+  const dropdownOptions = document.querySelector('.dropdown-options');
+  const dropdown = document.querySelector('.dropdown-selected span').textContent
+  dropdownOptions.style.display = dropdownOptions.style.display === 'block' ? 'none' : 'block';
+  if (dropdown == 'Select A Message' || dropdown == 'Custom Message') {
+    saveSubject = awaySubject.value;
+    saveMessage = awayMessage.value;
+  }
+}
+
+document.querySelectorAll('.dropdown-option').forEach(option => {
+    option.addEventListener('click', function() {
+      const selectedValue = this.dataset.value;
+      document.querySelector('.dropdown-selected span').textContent = selectedValue;
+      document.querySelector('.dropdown-options').style.display = 'none';
+      switch (selectedValue){
+        case 'Custom Message':
+          awaySubject.value = saveSubject;
+          awayMessage.value = saveMessage;
+          break;
+        case 'Holiday Message':
+          awaySubject.value = 'Cassel Bear will be closed\nDecember 25, 2024 – January 1, 2025';
+          awayMessage.value = 'Team members will be observing a holiday break with their family and friends from December 25th–January 1st. We will return on January 2nd.'
+          break;
+      }
+    });
+});
+
+window.onclick = function(event) {
+    if (!event.target.closest('.dropdown-container')) {
+      document.querySelector('.dropdown-options').style.display = 'none';
+    }
 }
 
   /**
     See details https://stackoverflow.com/questions/2044616/select-a-complete-table-with-javascript-to-be-copied-to-clipboard
   **/
   function copyToClipboard() {
+    function isChromeBrowser() {
+      return /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    }
+
+    isChromeBrowser()
+    
+    if (isChromeBrowser()) {
+      console.log("User is using Chrome browser.");
+      alert('STOP!\nYou are using a Chrome browser!\n\nPlease open team.casselbear.com and your Gmail Inbox in a Safari browser to continue.') 
+    } else {
+      console.log("User is not using Chrome browser.");
+    
         var el = document.getElementById('signature');
         var body = document.body, range, sel;
         if (document.createRange && window.getSelection) {
@@ -88,7 +140,7 @@ function showInput() {
         copyButton.setAttribute('copied','true');
         copyButton.classList.add('transition');
         copyButton.innerHTML = 'Copied!';
-        
+      }
     }
 
 copyButton.addEventListener('mouseleave', function(event){
