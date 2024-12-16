@@ -10,7 +10,8 @@
       "Nathan Van Twisk",
       "Ryan Howell",
       "Seth Teter",
-      "Shaye Ladd"
+      "Shaye Ladd",
+      "Zach Humm"
   ];
 
   var employeeEmails = [
@@ -24,5 +25,6 @@
       "nathan@casselbear.com",
       "ryanh@casselbear.com",
       "seth@casselbear.com",
-      "shaye@casselbear.com"
+      "shaye@casselbear.com",
+      "zach@casselbear.com"
     ];
