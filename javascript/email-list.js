@@ -5,13 +5,15 @@
       "Derek Stulpin",
       "Frank Whanger",
       "Hannah Miller",
+      "Jake Muller",
       "Karl Bear",
       "Keegan Bear",
       "Nathan Van Twisk",
       "Ryan Howell",
       "Seth Teter",
       "Shaye Ladd",
-      "Zach Humm"
+      "Zach Humm",
+      "Zechariah Eshack"
   ];
 
   var employeeEmails = [
@@ -20,11 +22,13 @@
       "derek@casselbear.com",
       "frank@casselbear.com",
       "hannah@casselbear.com",
+      "jake@casselbear",
       "karl@casselbear.com",
       "keegan@casselbear.com",
       "nathan@casselbear.com",
       "ryanh@casselbear.com",
       "seth@casselbear.com",
       "shaye@casselbear.com",
-      "zach@casselbear.com"
+      "zach@casselbear.com",
+      "zechariah@casselbear.com"
     ];
