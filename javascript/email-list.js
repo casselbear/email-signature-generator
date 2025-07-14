@@ -1,6 +1,5 @@
 /*An array containing all current CB employees*/
   var employeeName = [
-      "Collin Arnold",
       "Dave Lamp",
       "Derek Stulpin",
       "Frank Whanger",
@@ -17,12 +16,11 @@
   ];
 
   var employeeEmails = [
-      "collin@casselbear.com",
       "dave@casselbear.com",
       "derek@casselbear.com",
       "frank@casselbear.com",
       "hannah@casselbear.com",
-      "jake@casselbear",
+      "jake@casselbear.com",
       "karl@casselbear.com",
       "keegan@casselbear.com",
       "nathan@casselbear.com",
