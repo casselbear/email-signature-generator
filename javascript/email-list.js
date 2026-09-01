@@ -9,6 +9,7 @@
       "Keegan Bear",
       "Nathan Van Twisk",
       "Ryan Howell",
+      "Seth Marana"
       "Seth Teter",
       "Shaye Ladd",
       "Zach Humm",
@@ -25,6 +26,7 @@
       "keegan@casselbear.com",
       "nathan@casselbear.com",
       "ryanh@casselbear.com",
+      "seth.marana@casselbear.com",
       "seth@casselbear.com",
       "shaye@casselbear.com",
       "zach@casselbear.com",
